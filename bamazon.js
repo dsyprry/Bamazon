@@ -9,7 +9,7 @@ var connection = mysql.createConnection({
     database: "bamazon"
 })
 function Table (){
-	connection.query('SELECT * FROM products', function displayTable (err, res) {
+	connection.query('SELECT * FROM products', function connectSelect (err, res) {
     if (err) throw err;
 
     var t = "\t";
@@ -29,7 +29,7 @@ function Table (){
 };
 
 function Shop(res){
-	connection.query('SELECT * FROM products', function displayTable (err, res) {
+	connection.query('SELECT * FROM products', function connectSelect (err, res) {
 		inquirer.prompt([{
 		    type: "input",
 		    name: "purchase",
